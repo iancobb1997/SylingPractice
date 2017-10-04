@@ -1,0 +1,9 @@
+<div class="nav-buttons">
+	<div class="nav-button"><%= link_to "Home", home_path %></div>
+	<div class="nav-button"><%= link_to "About", about_path %></div>
+	<div class="nav-button"><%= link_to "Blogs", root_path %></div>
+	<div class="nav-button"><%= link_to "Donate", new_charge_path %></div>
+</div>
+<% if current_user.roles.include?(:admin) %>
+	<%= link_to "Admin Dashboard", admin_root_path %>
+<% end %>
