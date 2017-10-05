@@ -1,38 +1,45 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Blogs</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @blogs.each do |blog| %>
-      <tr>
-        <td><%= blog.title %></td>
-        <td><%= blog.body %></td>
-        <td><%= blog.date %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Blog', new_blog_path %>
 <%= render 'shared/nav' %>
-<% if logged_in?(:user, :admin) %>
-  <%= link_to 'Logout', destroy_user_session_path, :method => :delete %>
-<% else %>
-  <%= link_to 'Register', new_user_registration_path %>
-  <%= link_to 'Login', new_user_session_path %>
-<% end %>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Blogs</h1>
+
+  <div class="new-bl">
+    <%= link_to 'New Blog', new_blog_path, class: "btn btn-default" %>
+  </div>
+
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Date</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @blogs.each do |blog| %>
+        <tr>
+          <td><%= blog.title %></td>
+          <td><%= blog.body %></td>
+          <td><%= blog.date %></td>
+          <td><%= link_to '', blog, id: "show_#{blog.id}", class: "glyphicon glyphicon-menu-hamburger index-icons" %></td>
+          <td><%= link_to '', edit_blog_path(blog), id: "edit_#{blog.id}", class: 'glyphicon glyphicon-edit index-icons' %></td>
+          <td><%= link_to '', blog, method: :delete, id: "delete_blog_#{blog.id}_from_index", class: 'glyphicon glyphicon-trash index-icons', data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br />
+  
+  <div class="out-lg">
+    <% if logged_in?(:user, :admin) %>
+      <%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "btn btn-danger" %>
+    <% else %>
+      <%= link_to 'Register', new_user_registration_path %>
+      <%= link_to 'Login', new_user_session_path %>
+    <% end %>
+  </div>
+</div>

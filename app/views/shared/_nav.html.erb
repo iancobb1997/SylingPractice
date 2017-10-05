@@ -1,9 +1,27 @@
-<div class="nav-buttons">
-	<div class="nav-button"><%= link_to "Home", home_path %></div>
-	<div class="nav-button"><%= link_to "About", about_path %></div>
-	<div class="nav-button"><%= link_to "Blogs", root_path %></div>
-	<div class="nav-button"><%= link_to "Donate", new_charge_path %></div>
+<div class="container">
+	<div class="col-md-3"></div>
+	<div class="col-md-6">
+		<div class="nav-main">
+			<ul class="custom-nav nav nav-pills">
+			  <li role="presentation", class="<%= active?(home_path) %>">
+			  	<%= link_to "Home", home_path %>
+			  </li>
+			  <li role="presentation", class="<%= active?(about_path) %>">
+			  	<%= link_to "About", about_path %>
+			  </li>
+			  <li role="presentation", class="<%= active?(root_path) %>">
+			  	<%= link_to "Blogs", root_path %>
+			  </li>
+			  <li role="presentation", class="<%= active?(new_charge_path) %>">
+			  	<%= link_to "Donate", new_charge_path %>
+			  </li>
+			  <li role="presentation">
+			  	<% if current_user.roles.include?(:admin) %>
+						<%= link_to "Admin Dashboard", admin_root_path %>
+					<% end %>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-3"></div>
 </div>
-<% if current_user.roles.include?(:admin) %>
-	<%= link_to "Admin Dashboard", admin_root_path %>
-<% end %>

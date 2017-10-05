@@ -1,2 +1,23 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.index-icons {
+	font-size: 1.5em;
+}
+
+.index-icons:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.new-bl {
+	float: right;
+}
+
+.out-lg {
+	text-align: center;
+}
+
+.nav-main {
+	text-align: center;
+}
