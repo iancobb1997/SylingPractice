@@ -1,5 +1,5 @@
-<%= render 'shared/nav' %>
 <div class="container">
+  <%= render 'shared/nav' %>
   <p id="notice"><%= notice %></p>
 
   <h1>Blogs</h1>
@@ -33,13 +33,4 @@
   </table>
 
   <br />
-  
-  <div class="out-lg">
-    <% if logged_in?(:user, :admin) %>
-      <%= link_to 'Logout', destroy_user_session_path, :method => :delete, class: "btn btn-danger" %>
-    <% else %>
-      <%= link_to 'Register', new_user_registration_path %>
-      <%= link_to 'Login', new_user_session_path %>
-    <% end %>
-  </div>
 </div>
