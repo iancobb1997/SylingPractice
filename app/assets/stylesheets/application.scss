@@ -1,6 +1,10 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body {
+	background-color: black;
+	color: #218CCF;
+}
 
 .index-icons {
 	font-size: 1.5em;
@@ -17,4 +21,15 @@
 
 .out-lg {
 	text-align: center;
+}
+
+.set-index-icons {
+	font-size: 2em;
+	text-align: center;
+	vertical-align: bottom;
+	margin-right: 5px;
+}
+
+.sh-jum {
+	background-color: #A4B9BF;
 }

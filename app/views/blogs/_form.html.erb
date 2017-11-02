@@ -13,20 +13,26 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :blog_title %>
+    <%= form.text_field :title, id: :blog_title, class: "form-control input-lg", placeholder: "Title" %>
   </div>
+
+  <br />
 
   <div class="field">
     <%= form.label :body %>
-    <%= form.text_area :body, id: :blog_body %>
+    <%= form.text_area :body, id: :blog_body, class: "form-control input-lg", placeholder: "Body" %>
   </div>
+
+  <br />
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.date_select :date, id: :blog_date %>
+    <%= form.date_select :date, id: :blog_date, class: "form-control input-lg", placeholder: "Date" %>
   </div>
 
+  <br />
+
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class: "btn btn-block btn-primary" %>
   </div>
 <% end %>
